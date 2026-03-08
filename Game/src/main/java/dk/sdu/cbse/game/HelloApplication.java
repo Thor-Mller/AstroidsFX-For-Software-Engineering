@@ -1,4 +1,4 @@
-package dk.sdu.cbse.core;
+package dk.sdu.cbse.game;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
