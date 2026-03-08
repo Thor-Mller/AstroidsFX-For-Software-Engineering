@@ -11,4 +11,9 @@ public class VelocityComponent implements IComponent {
         this.dx = dx;
         this.dy = dy;
     }
+
+    public double getDx() {return this.dx;}
+    public double getDy() {return this.dy;}
+    public void setDx(double newDx) {this.dx = newDx;}
+    public void setDy(double newDy) {this.dy = newDy;}
 }
