@@ -1,7 +1,7 @@
 package dk.sdu.cbse.common;
 
-import java.util.List;
+import java.util.HashSet;
 
 public interface IWorld {
-    List<IEntity> getEntitiesWithComponent(Class<? extends IComponent> componentClass);
+    HashSet<IEntity> getEntitiesWithComponent(Class<? extends IComponent>... componentClass);
 }

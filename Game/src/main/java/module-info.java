@@ -5,6 +5,4 @@ module dk.sdu.cbse.game {
 
     requires dk.sdu.cbse.common;
     requires dk.sdu.cbse.core;
-
-    exports dk.sdu.cbse.game;
 }

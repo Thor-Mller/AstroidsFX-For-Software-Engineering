@@ -1,13 +1,15 @@
 package dk.sdu.cbse.common.components;
 
-public class SpriteComponent {
-    private String path;
-    private Float sizeX;
-    private Float sizeY;
+import dk.sdu.cbse.common.IComponent;
 
-    SpriteComponent(String path, Float sizeX, Float sizeY){
-        this.path = path;
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
+public class SpriteComponent implements IComponent {
+    private final String imagePath;
+
+    public SpriteComponent(String imagePath){
+        this.imagePath = imagePath;
+    }
+
+    public String getPath(){
+        return imagePath;
     }
 }

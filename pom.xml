@@ -13,6 +13,7 @@
         <module>Common</module>
         <module>Core</module>
         <module>Game</module>
+        <module>Player-Mod</module>
     </modules>
 
     <properties>
