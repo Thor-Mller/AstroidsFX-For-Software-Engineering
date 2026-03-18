@@ -1,14 +1,11 @@
 package dk.sdu.cbse.core;
 
-import dk.sdu.cbse.common.IEntity;
-import dk.sdu.cbse.common.IEntitySystem;
-import dk.sdu.cbse.common.IWorld;
-import dk.sdu.cbse.common.Priority;
+import dk.sdu.cbse.common.*;
 import dk.sdu.cbse.common.components.*;
 
 import javax.swing.text.Position;
 
-public class MovementSystem implements IEntitySystem {
+public class MovementSystem extends BaseLogicSystem {
 
     @Override
     public Priority getPriority(){
@@ -19,8 +16,8 @@ public class MovementSystem implements IEntitySystem {
     public void process(IWorld world) {
         for (IEntity entity : world.getEntitiesWithComponent(PositionComponent.class)) {
 
-            PositionComponent pos = entity.getComponent(PositionComponent.class);
-            VelocityComponent vel = entity.getComponent(VelocityComponent.class);
+            PositionComponent pos = (PositionComponent) entity.getComponent(PositionComponent.class);
+            VelocityComponent vel = (VelocityComponent) entity.getComponent(VelocityComponent.class);
 
             if (vel != null) {
                 pos.setX(pos.getX() + vel.getDx());

@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-public abstract class BaseEntity implements IEntity{
+public abstract class BaseEntity implements IEntity {
 
     private String id = UUID.randomUUID().toString();
 
@@ -17,7 +17,7 @@ public abstract class BaseEntity implements IEntity{
      *
      * @return Returns the UUID of the entity.
      */
-    public String getId(){
+    public String getId() {
         return id;
     }
 
@@ -30,17 +30,19 @@ public abstract class BaseEntity implements IEntity{
         return new ArrayList<>(components.values());
     }
 
-    public void addComponent(IComponent component){
+    public void addComponent(IComponent component) {
         components.put(component.getClass(), component);
     }
 
-    public <T extends IComponent> T getComponent(Class<T> componentClass){
-        return componentClass.cast(components.getClass());
+    @Override
+    public IComponent getComponent(Class<? extends IComponent> componentClass) {
+        return components.get(componentClass);
     }
 
-    /** Java checks to see if two objects is the same
+    /**
+     * Java checks to see if two objects is the same
      *
-     * @param o   the reference object with which to compare.
+     * @param o the reference object with which to compare.
      * @return bool = true, if they are the same
      */
     @Override

@@ -7,7 +7,7 @@ public class PositionComponent implements IComponent {
     public double y;
 
 
-    PositionComponent(double x, double y) {
+    public PositionComponent(double x, double y) {
         this.x = x;
         this.y = y;
     }
