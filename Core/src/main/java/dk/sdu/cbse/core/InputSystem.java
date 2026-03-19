@@ -16,7 +16,7 @@ public class InputSystem extends BaseLogicSystem {
     public void process(IWorld world) {
         for (IEntity entities : world.getEntitiesWithComponent(InputComponent.class)){
             InputComponent input = (InputComponent) entities.getComponent(InputComponent.class);
-            
+
         }
     }
 }
