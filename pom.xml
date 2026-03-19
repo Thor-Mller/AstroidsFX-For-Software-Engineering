@@ -38,11 +38,13 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-controls</artifactId>
                 <version>21.0.6</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
-                <artifactId>javafx-fxml</artifactId>
+                <artifactId>javafx-graphics</artifactId>
                 <version>21.0.6</version>
+                <scope>runtime</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -75,13 +77,10 @@
                     <executable>java</executable>
                     <workingDirectory>.</workingDirectory>
                     <arguments>
-                        <argument>--module-path=mods-mvn</argument>
+                        <argument>--module-path=mods-mvn;libs</argument>
                         <argument>--class-path=libs/*</argument>
-                        <argument>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,
-                            address=127.0.0.1:8000
-                        </argument>
-                        <argument>--module=Core/dk.sdu.mmmi.cbse.main.Main</argument>
-                        <argument>--add-modulesjavafx.graphics</argument>
+                        <argument>--module=dk.sdu.cbse.game/dk.sdu.cbse.game.Game</argument>
+                        <argument>--add-modules=javafx.graphics</argument>
                     </arguments>
                 </configuration>
             </plugin>
@@ -94,7 +93,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>dk.sdu.cbse.core/dk.sdu.cbse.gore.HelloApplication</mainClass>
+                            <mainClass>dk.sdu.cbse.game/dk.sdu.cbse.game.Game</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

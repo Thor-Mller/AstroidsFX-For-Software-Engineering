@@ -25,9 +25,11 @@ public class Game extends Application {
             if (system.getPriority() == Priority.Logic)
                 logicSystems.add((BaseLogicSystem) system);
             else if (system.getPriority() == Priority.Render){
-                ((BaseRenderSystem) system).initialize(gamePane);
-                renderSystems.add((BaseRenderSystem) system);
+                BaseRenderSystem rendersystem = (BaseRenderSystem) system;
+                rendersystem.initialize(gamePane);
+                renderSystems.add(rendersystem);
             }
+            // System.out.println("loaded 1 " + system.getClass().getName());
         }
     }
 
@@ -35,6 +37,7 @@ public class Game extends Application {
         ServiceLoader<IGamePlugin> loader = ServiceLoader.load(IGamePlugin.class);
         for (IGamePlugin mod : loader){
             mod.start(world);
+            // System.out.println("loaded 1 " + mod.getClass().getName());
         }
     }
 
@@ -43,8 +46,8 @@ public class Game extends Application {
         Scene scene = new Scene(gamePane, 800,600);
         primaryStage.setScene(scene);
         primaryStage.setTitle("AstroidsFX");
-        modLoader();
         systemInitializer();
+        modLoader();
         primaryStage.show();
 
         startGameLoop();
@@ -68,7 +71,7 @@ public class Game extends Application {
 
     private void draw(){
         for (BaseRenderSystem system : renderSystems){
-            system.process(gamePane);
+            system.process(world);
         }
     }
 }

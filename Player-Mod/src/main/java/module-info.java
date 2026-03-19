@@ -1,5 +1,7 @@
 module dk.sdu.cbse.playermod {
     requires dk.sdu.cbse.common;
+    requires java.desktop;
+    requires javafx.graphics;
 
     opens assets;
 

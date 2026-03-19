@@ -29,13 +29,17 @@ public class RenderSystem extends BaseRenderSystem {
     public void process(IWorld world){
         if (pane == null) throw new IllegalStateException("RenderSystem not initialized");
         Set<IEntity> rendableEntities = world.getEntitiesWithComponent(SpriteComponent.class, PositionComponent.class);
+        // System.out.println("Renderable entities: " + rendableEntities.size());
+        // System.out.println("Pane children: " + pane.getChildren().size());
 
         for (IEntity entity : rendableEntities){
             PositionComponent pos = (PositionComponent) entity.getComponent(PositionComponent.class);
             SpriteComponent spr = (SpriteComponent) entity.getComponent(SpriteComponent.class);
+            // System.out.println("Pos: " + pos.getX() + ", " + pos.getY());
+            // System.out.println("Image null? " + (spr.getPath() == null));
 
             ImageView view = entityImageViewMap.computeIfAbsent(entity, e-> {
-                Image img = new Image(getClass().getResourceAsStream(spr.getPath()));
+                Image img = spr.getPath();
                 ImageView iv = new ImageView(img);
                 iv.setSmooth(false);
                 pane.getChildren().add(iv);

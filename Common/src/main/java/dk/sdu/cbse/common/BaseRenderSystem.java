@@ -4,7 +4,7 @@ import javafx.scene.layout.Pane;
 
 public class BaseRenderSystem implements IEntitySystem{
 
-    public void process(Pane pane) {
+    public void process(IWorld world) {
     }
 
     public void initialize(Pane pane){
