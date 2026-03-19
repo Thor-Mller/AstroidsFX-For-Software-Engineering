@@ -14,7 +14,7 @@ public class MovementSystem extends BaseLogicSystem {
 
     @Override
     public void process(IWorld world) {
-        for (IEntity entity : world.getEntitiesWithComponent(PositionComponent.class)) {
+        for (IEntity entity : world.getEntitiesWithComponent(PositionComponent.class, VelocityComponent.class)) {
 
             PositionComponent pos = (PositionComponent) entity.getComponent(PositionComponent.class);
             VelocityComponent vel = (VelocityComponent) entity.getComponent(VelocityComponent.class);

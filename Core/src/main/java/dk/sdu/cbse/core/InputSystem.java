@@ -17,6 +17,10 @@ public class InputSystem extends BaseLogicSystem {
         for (IEntity entities : world.getEntitiesWithComponent(InputComponent.class)){
             InputComponent input = (InputComponent) entities.getComponent(InputComponent.class);
 
+            input.UP = keypressed.contains(KeyCode.W) || keypressed.contains(KeyCode.UP);
+            input.DOWN = keypressed.contains(KeyCode.S) || keypressed.contains(KeyCode.DOWN);
+            input.RIGHT = keypressed.contains(KeyCode.D) || keypressed.contains(KeyCode.RIGHT);
+            input.LEFT = keypressed.contains(KeyCode.A) || keypressed.contains(KeyCode.LEFT);
         }
     }
 }
