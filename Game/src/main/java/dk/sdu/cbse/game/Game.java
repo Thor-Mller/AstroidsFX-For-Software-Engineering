@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ServiceLoader;
 
 public class Game extends Application {
@@ -17,16 +16,16 @@ public class Game extends Application {
     private final World world = World.getInstance();
 
     private final List<BaseLogicSystem> logicSystems = new ArrayList<>();
-    private final List<BaseRenderSystem> renderSystems = new ArrayList<>();
+    private final List<BaseIOSystem> renderSystems = new ArrayList<>();
 
-    private void systemInitializer(){
+    private void systemInitializer(GameData gameData){
         ServiceLoader<IEntitySystem> loader = ServiceLoader.load(IEntitySystem.class);
         for (IEntitySystem system : loader){
             if (system.getPriority() == Priority.Logic)
                 logicSystems.add((BaseLogicSystem) system);
             else if (system.getPriority() == Priority.Render){
-                BaseRenderSystem rendersystem = (BaseRenderSystem) system;
-                rendersystem.initialize(gamePane);
+                BaseIOSystem rendersystem = (BaseIOSystem) system;
+                rendersystem.initialize(gameData);
                 renderSystems.add(rendersystem);
             }
             // System.out.println("loaded 1 " + system.getClass().getName());
@@ -43,10 +42,13 @@ public class Game extends Application {
 
     @Override
     public void start(Stage primaryStage){
-        Scene scene = new Scene(gamePane, 800,600);
+        int Height = 800;
+        int Width = 600;
+        Scene scene = new Scene(gamePane, Height,Width);
+        GameData gameData = new GameData(Width, Height, scene, gamePane);
         primaryStage.setScene(scene);
         primaryStage.setTitle("AstroidsFX");
-        systemInitializer();
+        systemInitializer(gameData);
         modLoader();
         primaryStage.show();
 
@@ -70,7 +72,7 @@ public class Game extends Application {
     }
 
     private void draw(){
-        for (BaseRenderSystem system : renderSystems){
+        for (BaseIOSystem system : renderSystems){
             system.process(world);
         }
     }

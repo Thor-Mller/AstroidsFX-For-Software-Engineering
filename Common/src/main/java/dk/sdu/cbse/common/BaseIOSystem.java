@@ -2,12 +2,12 @@ package dk.sdu.cbse.common;
 
 import javafx.scene.layout.Pane;
 
-public class BaseRenderSystem implements IEntitySystem{
+public class BaseIOSystem implements IEntitySystem{
 
     public void process(IWorld world) {
     }
 
-    public void initialize(Pane pane){
+    public void initialize(GameData gameData){
     }
 
     @Override

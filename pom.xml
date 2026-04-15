@@ -14,6 +14,8 @@
         <module>Core</module>
         <module>Game</module>
         <module>Player-Mod</module>
+        <module>Bullet-mod/Bullet</module>
+        <module>Bullet-mod/BulletComponent</module>
     </modules>
 
     <properties>

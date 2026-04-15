@@ -11,9 +11,17 @@ public class PlayerPlugin implements IGamePlugin{
     @Override
     public void start(IWorld world) {
         player = createPlayer();
+        player.addComponent(new PlayerComponent());
+
         player.addComponent(new PositionComponent(400, 300));
-        player.addComponent(new VelocityComponent(1,10));
-        Image img = new Image(getClass().getResourceAsStream("/assets/player_old.png"));
+
+        player.addComponent(new VelocityComponent(1,10,0.5));
+
+        player.addComponent(new InputComponent());
+
+        player.addComponent(new AngleComponent(0));
+
+        Image img = new Image(getClass().getResourceAsStream("/assets/player.png"));
         player.addComponent(new SpriteComponent(img));
 
         world.addEntity(player);
