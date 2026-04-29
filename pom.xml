@@ -163,7 +163,7 @@
                                             <type>jar</type>
                                         </artifactItem>
                                     </artifactItems>
-                                    <outputDirectory>../mods-mvn</outputDirectory>
+                                    <outputDirectory>${maven.multiModuleProjectDirectory}/mods-mvn</outputDirectory>
                                 </configuration>
                             </execution>
                         </executions>

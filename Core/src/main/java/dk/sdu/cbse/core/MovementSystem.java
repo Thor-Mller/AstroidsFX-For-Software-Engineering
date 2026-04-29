@@ -3,11 +3,8 @@ package dk.sdu.cbse.core;
 import dk.sdu.cbse.common.*;
 import dk.sdu.cbse.common.components.*;
 
-import javax.swing.text.Position;
-
 public class MovementSystem extends BaseLogicSystem {
 
-    private double drag = 0.5;
     private double movementSpeed = 2;
 
     @Override

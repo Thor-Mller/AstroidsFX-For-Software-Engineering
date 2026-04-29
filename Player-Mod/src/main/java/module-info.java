@@ -3,7 +3,7 @@ module dk.sdu.cbse.playermod {
     requires java.desktop;
     requires javafx.graphics;
 
-    opens assets;
+    opens assets.player;
 
     provides dk.sdu.cbse.common.IGamePlugin with dk.sdu.cbse.playermod.PlayerPlugin;
 }

@@ -11,7 +11,7 @@ import java.util.Set;
 public class InputSystem extends BaseIOSystem {
     private final Set<KeyCode> keypressed = new HashSet<>();
 
-    public InputSystem(){};
+    public InputSystem(){}
 
     @Override
     public void initialize(GameData gameData){
@@ -30,7 +30,7 @@ public class InputSystem extends BaseIOSystem {
             input.DOWN = keypressed.contains(KeyCode.S) || keypressed.contains(KeyCode.DOWN);
             input.RIGHT = keypressed.contains(KeyCode.D) || keypressed.contains(KeyCode.RIGHT);
             input.LEFT = keypressed.contains(KeyCode.A) || keypressed.contains(KeyCode.LEFT);
-            input.SHOOT = keypressed.contains(KeyCode.SPACE);
+            input.SHOOT = keypressed.contains(KeyCode.SPACE) || keypressed.contains(KeyCode.M);
         }
     }
 }

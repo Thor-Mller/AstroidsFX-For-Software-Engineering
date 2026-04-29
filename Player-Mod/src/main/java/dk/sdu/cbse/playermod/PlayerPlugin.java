@@ -21,7 +21,7 @@ public class PlayerPlugin implements IGamePlugin{
 
         player.addComponent(new AngleComponent(0));
 
-        Image img = new Image(getClass().getResourceAsStream("/assets/player.png"));
+        Image img = new Image(getClass().getResourceAsStream("/assets/player/player.png"));
         player.addComponent(new SpriteComponent(img));
 
         world.addEntity(player);
