@@ -1,8 +1,6 @@
 package dk.sdu.cbse.playerSystem;
 
-import dk.sdu.cbse.common.IEntity;
-import dk.sdu.cbse.common.IWorld;
-import dk.sdu.cbse.common.BaseLogicSystem;
+import dk.sdu.cbse.common.*;
 import dk.sdu.cbse.common.components.PlayerComponent;
 import dk.sdu.cbse.common.components.PositionComponent;
 import dk.sdu.cbse.common.components.VelocityComponent;

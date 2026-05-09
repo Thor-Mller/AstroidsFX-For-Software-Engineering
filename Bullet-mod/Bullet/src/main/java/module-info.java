@@ -6,6 +6,7 @@ module dk.sdu.cbse.bullet {
     requires java.desktop;
     requires javafx.graphics;
     requires dk.sdu.cbse.bulletcomponent;
+    requires ColliderComponent;
 
     exports dk.sdu.cbse.bullet to dk.sdu.cbse.game;
     opens assest.bullet;

@@ -6,11 +6,17 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
 
+@Component("game")
 public class Game extends Application {
     private final Pane gamePane = new Pane();
     private final World world = World.getInstance();
@@ -34,13 +40,16 @@ public class Game extends Application {
         }
     }
 
-    private void modLoader(){
-        ServiceLoader<IGamePlugin> loader = ServiceLoader.load(IGamePlugin.class);
-        for (IGamePlugin mod : loader){
-            mod.start(world);
-            // System.out.println("loaded 1 " + mod.getClass().getName());
-        }
-    }
+    @Autowired
+    private List<IGamePlugin> gamePlugins;
+
+//    private void modLoader(){
+//        ServiceLoader<IGamePlugin> loader = ServiceLoader.load(IGamePlugin.class);
+//        for (IGamePlugin mod : loader){
+//            mod.start(world);
+//            // System.out.println("loaded 1 " + mod.getClass().getName());
+//        }
+//    }
 
     @Override
     public void start(Stage primaryStage){
@@ -51,7 +60,8 @@ public class Game extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("AstroidsFX");
         systemInitializer(gameData);
-        modLoader();
+        // modLoader();
+        gamePlugins.forEach(p -> p.start(world));
         primaryStage.show();
 
         startGameLoop();

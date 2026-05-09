@@ -5,6 +5,7 @@ module Astroid {
     requires java.desktop;
     requires javafx.graphics;
     requires AstroidComponent;
+    requires ColliderComponent;
 
     exports dk.sdu.astroid to dk.sdu.cbse.game;
     opens assets.astroid;

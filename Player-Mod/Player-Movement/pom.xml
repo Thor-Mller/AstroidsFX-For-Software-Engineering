@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Player-Movement</artifactId>
+    <artifactId>PlayerMovement</artifactId>
 
     <dependencies>
         <dependency>

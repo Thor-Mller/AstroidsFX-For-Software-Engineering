@@ -1,5 +1,6 @@
 package dk.sdu.cbse.bullet;
 
+import dk.sdu.cbse.colliderComponent.ColliderComponent;
 import dk.sdu.cbse.common.IEntity;
 import dk.sdu.cbse.common.IGamePlugin;
 import dk.sdu.cbse.common.IWorld;
@@ -29,6 +30,8 @@ public class BulletPlugin implements IGamePlugin {
         bullet.addComponent(vel);
 
         bullet.addComponent(new BulletComponent());
+
+        bullet.addComponent(new ColliderComponent(5));
 
         bullet.addComponent(new AngleComponent(angle));
 

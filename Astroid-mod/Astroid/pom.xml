@@ -33,6 +33,11 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>dk.sdu.cbse</groupId>
+            <artifactId>ColliderCompoent</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <properties>

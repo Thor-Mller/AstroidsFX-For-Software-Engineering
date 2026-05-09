@@ -19,8 +19,8 @@
         <module>Bullet-mod/BulletComponent</module>
         <module>Astroid-mod/Astroid</module>
         <module>Astroid-mod/AstroidComponent</module>
-        <module>ColliderCompoent</module>
-        <module>Collider</module>
+        <module>Collision-mod/ColliderComponent</module>
+        <module>Collision-mod/Collider</module>
 
     </modules>
 
@@ -54,8 +54,14 @@
                 <version>21.0.6</version>
                 <scope>runtime</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>7.0.5</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -109,6 +115,24 @@
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${maven.multiModuleProjectDirectory}/libs</outputDirectory>
+                            <includeScope>runtime</includeScope>
                         </configuration>
                     </execution>
                 </executions>

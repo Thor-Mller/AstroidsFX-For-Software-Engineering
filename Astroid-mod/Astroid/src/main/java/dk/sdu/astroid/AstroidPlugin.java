@@ -1,5 +1,6 @@
 package dk.sdu.astroid;
 
+import dk.sdu.cbse.colliderComponent.ColliderComponent;
 import dk.sdu.cbse.common.IEntity;
 import dk.sdu.cbse.common.IGamePlugin;
 import dk.sdu.cbse.common.IWorld;
@@ -15,19 +16,20 @@ import java.util.Random;
 public class AstroidPlugin implements IGamePlugin{
     @Override
     public void start(IWorld world) {
-        spawnAstroid(world);
     }
 
     public void spawnAstroid(IWorld world){
         IEntity astroid = createAstroid();
 
         VelocityComponent vel = new VelocityComponent(1,100,1);
-        vel.setDy(5);
+        vel.setDy(2.5);
         astroid.addComponent(vel);
 
         astroid.addComponent(new AstroidComponent());
 
         astroid.addComponent(new AngleComponent(0));
+
+        astroid.addComponent(new ColliderComponent(32));
 
         astroid.addComponent(new PositionComponent(getRandomSpawnPosition(),0));
 
