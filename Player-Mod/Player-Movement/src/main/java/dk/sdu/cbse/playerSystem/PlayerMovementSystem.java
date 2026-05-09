@@ -1,7 +1,12 @@
-package dk.sdu.playermovement;
+package dk.sdu.cbse.playerSystem;
 
-import dk.sdu.cbse.common.*;
-import dk.sdu.cbse.common.components.*;
+import dk.sdu.cbse.common.IEntity;
+import dk.sdu.cbse.common.IWorld;
+import dk.sdu.cbse.common.BaseLogicSystem;
+import dk.sdu.cbse.common.components.PlayerComponent;
+import dk.sdu.cbse.common.components.PositionComponent;
+import dk.sdu.cbse.common.components.VelocityComponent;
+import dk.sdu.cbse.common.components.InputComponent;
 
 public class PlayerMovementSystem extends BaseLogicSystem {
 
@@ -11,7 +16,6 @@ public class PlayerMovementSystem extends BaseLogicSystem {
     public void process(IWorld world, double deltaTime) {
         for (IEntity entity : world.getEntitiesWithComponent(PositionComponent.class, VelocityComponent.class, PlayerComponent.class, InputComponent.class)) {
 
-            PositionComponent pos = (PositionComponent) entity.getComponent(PositionComponent.class);
             VelocityComponent vel = (VelocityComponent) entity.getComponent(VelocityComponent.class);
             InputComponent inp = (InputComponent) entity.getComponent(InputComponent.class);
 
