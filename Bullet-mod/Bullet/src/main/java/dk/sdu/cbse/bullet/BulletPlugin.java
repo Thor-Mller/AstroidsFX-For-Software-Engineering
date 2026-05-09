@@ -1,4 +1,4 @@
-package dk.sdu.cbse;
+package dk.sdu.cbse.bullet;
 
 import dk.sdu.cbse.common.IEntity;
 import dk.sdu.cbse.common.IGamePlugin;
@@ -7,6 +7,7 @@ import dk.sdu.cbse.common.components.AngleComponent;
 import dk.sdu.cbse.common.components.PositionComponent;
 import dk.sdu.cbse.common.components.SpriteComponent;
 import dk.sdu.cbse.common.components.VelocityComponent;
+import dk.sdu.cbse.bulletComponent.BulletComponent;
 
 import javafx.scene.image.Image;
 
@@ -24,9 +25,10 @@ public class BulletPlugin implements IGamePlugin {
         IEntity bullet = createBullet(world);
 
         VelocityComponent vel = new VelocityComponent(1,1000,1);
-        vel.setDy(100);
+        vel.setDy(-10);
         bullet.addComponent(vel);
 
+        bullet.addComponent(new BulletComponent());
 
         bullet.addComponent(new AngleComponent(angle));
 

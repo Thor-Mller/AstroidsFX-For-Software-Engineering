@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Astroid-mod/Astroid/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Astroid-mod/Astroid/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Astroid-mod/AstroidComponent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Astroid-mod/AstroidComponent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/Bullet/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/Bullet/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/BulletComponent/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/BulletComponent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Collider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Collider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ColliderCompoent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ColliderCompoent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Core/main/java" charset="UTF-8" />
@@ -13,8 +21,12 @@
     <file url="file://$PROJECT_DIR$/Core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Game/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Game/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Player-Mod/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Player-Mod/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/Player-Movement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/Player-Movement/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/Player/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/Player/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Movement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Movement/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

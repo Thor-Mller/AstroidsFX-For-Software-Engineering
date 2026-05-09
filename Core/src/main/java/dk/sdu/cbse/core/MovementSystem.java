@@ -5,7 +5,6 @@ import dk.sdu.cbse.common.components.*;
 
 public class MovementSystem extends BaseLogicSystem {
 
-    private double movementSpeed = 2;
 
     @Override
     public Priority getPriority(){
@@ -13,19 +12,12 @@ public class MovementSystem extends BaseLogicSystem {
     }
 
     @Override
-    public void process(IWorld world) {
-        for (IEntity entity : world.getEntitiesWithComponent(PositionComponent.class, VelocityComponent.class, PlayerComponent.class, InputComponent.class)) {
+    public void process(IWorld world, double deltaTime) {
+        for (IEntity entity : world.getEntitiesWithComponent(PositionComponent.class, VelocityComponent.class)) {
 
             PositionComponent pos = (PositionComponent) entity.getComponent(PositionComponent.class);
             VelocityComponent vel = (VelocityComponent) entity.getComponent(VelocityComponent.class);
-            InputComponent inp = (InputComponent) entity.getComponent(InputComponent.class);
 
-            if (inp != null) {
-                if (inp.UP) vel.setDy(-movementSpeed);
-                if (inp.DOWN) vel.setDy(+movementSpeed);
-                if (inp.RIGHT) vel.setDx(+movementSpeed);
-                if (inp.LEFT) vel.setDx(-movementSpeed);
-            }
 
             if (vel != null) {
                 pos.setX(pos.getX() + vel.getDx());

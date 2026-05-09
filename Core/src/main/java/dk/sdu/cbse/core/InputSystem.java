@@ -22,7 +22,7 @@ public class InputSystem extends BaseIOSystem {
     }
 
     @Override
-    public void process(IWorld world) {
+    public void process(IWorld world, double deltaTime) {
         for (IEntity entities : world.getEntitiesWithComponent(InputComponent.class)){
             InputComponent input = (InputComponent) entities.getComponent(InputComponent.class);
 

@@ -28,7 +28,7 @@ public class RenderSystem extends BaseIOSystem {
         return Priority.Render;
     }
 
-    public void process(IWorld world){
+    public void process(IWorld world, double deltaTime){
         if (pane == null) throw new IllegalStateException("RenderSystem not initialized");
         Set<IEntity> rendableEntities = world.getEntitiesWithComponent(SpriteComponent.class, PositionComponent.class, AngleComponent.class);
         // System.out.println("Renderable entities: " + rendableEntities.size());

@@ -18,6 +18,8 @@ public class Game extends Application {
     private final List<BaseLogicSystem> logicSystems = new ArrayList<>();
     private final List<BaseIOSystem> renderSystems = new ArrayList<>();
 
+    private long endTime;
+
     private void systemInitializer(GameData gameData){
         ServiceLoader<IEntitySystem> loader = ServiceLoader.load(IEntitySystem.class);
         for (IEntitySystem system : loader){
@@ -59,21 +61,28 @@ public class Game extends Application {
         new javafx.animation.AnimationTimer(){
             @Override
             public void handle(long now){
-                update();
-                draw();
+                if (endTime == 0){
+                    endTime = now;
+                    return;
+                }
+                double deltaTime = (now - endTime) / 1_000_000_000.0;
+                endTime = now;
+                update(deltaTime);
+                draw(deltaTime);
             }
         }.start();
     }
 
-    private void update(){
+    private void update(double dt){
         for (BaseLogicSystem system : logicSystems){
-            system.process(world);
+            system.process(world, dt);
+
         }
     }
 
-    private void draw(){
+    private void draw(double dt){
         for (BaseIOSystem system : renderSystems){
-            system.process(world);
+            system.process(world, dt);
         }
     }
 }

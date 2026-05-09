@@ -13,9 +13,15 @@
         <module>Common</module>
         <module>Core</module>
         <module>Game</module>
-        <module>Player-Mod</module>
+        <module>Player-Mod/Player</module>
+        <module>Player-Mod/Player-Movement</module>
         <module>Bullet-mod/Bullet</module>
         <module>Bullet-mod/BulletComponent</module>
+        <module>Astroid-mod/Astroid</module>
+        <module>Astroid-mod/AstroidComponent</module>
+        <module>ColliderCompoent</module>
+        <module>Collider</module>
+
     </modules>
 
     <properties>
@@ -83,6 +89,7 @@
                         <argument>--class-path=libs/*</argument>
                         <argument>--module=dk.sdu.cbse.game/dk.sdu.cbse.game.Game</argument>
                         <argument>--add-modules=javafx.graphics</argument>
+                        <argument>--enable-native-access=javafx.graphics</argument>
                     </arguments>
                 </configuration>
             </plugin>

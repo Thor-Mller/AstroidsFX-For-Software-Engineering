@@ -1,4 +1,4 @@
-package dk.sdu.cbse;
+package dk.sdu.cbse.bulletComponent;
 
 import dk.sdu.cbse.common.IComponent;
 

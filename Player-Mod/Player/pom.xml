@@ -9,7 +9,7 @@
         <artifactId>IntelliJ-AsroidsFx</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>Player-Mod</artifactId>
+    <artifactId>Player</artifactId>
 
     <dependencies>
         <dependency>

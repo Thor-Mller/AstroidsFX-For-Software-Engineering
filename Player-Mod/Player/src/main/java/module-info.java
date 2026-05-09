@@ -1,4 +1,4 @@
-module dk.sdu.cbse.playermod {
+module dk.sdu.cbse{
     requires dk.sdu.cbse.common;
     requires java.desktop;
     requires javafx.graphics;
