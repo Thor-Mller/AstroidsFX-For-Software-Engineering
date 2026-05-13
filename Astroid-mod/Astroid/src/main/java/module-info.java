@@ -1,4 +1,5 @@
-import dk.sdu.astroid.AstroidPlugin;
+import dk.sdu.cbse.astroid.AstroidPlugin;
+import dk.sdu.cbse.astroid.AstroidSystem;
 
 module Astroid {
     requires dk.sdu.cbse.common;
@@ -6,11 +7,14 @@ module Astroid {
     requires javafx.graphics;
     requires AstroidComponent;
     requires ColliderComponent;
+    requires spring.context;
+    requires spring.beans;
+    requires spring.core;
 
-    exports dk.sdu.astroid to dk.sdu.cbse.game;
     opens assets.astroid;
+    exports dk.sdu.cbse.astroid to dk.sdu.cbse.game;
 
     provides dk.sdu.cbse.common.IGamePlugin with AstroidPlugin;
-    provides dk.sdu.cbse.common.IEntitySystem with dk.sdu.astroid.AstroidSystem;
+    provides dk.sdu.cbse.common.IEntitySystem with AstroidSystem;
 
 }

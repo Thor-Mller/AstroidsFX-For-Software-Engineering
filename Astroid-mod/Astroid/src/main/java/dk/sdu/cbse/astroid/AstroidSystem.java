@@ -1,4 +1,4 @@
-package dk.sdu.astroid;
+package dk.sdu.cbse.astroid;
 
 import dk.sdu.cbse.common.BaseLogicSystem;
 import dk.sdu.cbse.common.IWorld;

@@ -10,5 +10,5 @@ module dk.sdu.cbse.game {
     requires dk.sdu.cbse.common;
     requires dk.sdu.cbse.core;
 
-    opens dk.sdu.cbse.game to javafx.graphics;
+    opens dk.sdu.cbse.game to spring.core, spring.beans, spring.context, javafx.graphics;
 }

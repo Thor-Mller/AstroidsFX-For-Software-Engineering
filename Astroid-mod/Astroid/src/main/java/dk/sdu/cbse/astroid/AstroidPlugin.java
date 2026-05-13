@@ -1,4 +1,4 @@
-package dk.sdu.astroid;
+package dk.sdu.cbse.astroid;
 
 import dk.sdu.cbse.colliderComponent.ColliderComponent;
 import dk.sdu.cbse.common.IEntity;
@@ -10,9 +10,11 @@ import dk.sdu.cbse.common.components.SpriteComponent;
 import dk.sdu.cbse.common.components.VelocityComponent;
 import javafx.scene.image.Image;
 import dk.sdu.cbse.astroidComponent.AstroidComponent;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+@Component
 public class AstroidPlugin implements IGamePlugin{
     @Override
     public void start(IWorld world) {

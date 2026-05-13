@@ -53,6 +53,12 @@ public class Game extends Application {
 
     @Override
     public void start(Stage primaryStage){
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.register(GameConfig.class);
+        context.refresh();
+
+        context.getAutowireCapableBeanFactory().autowireBean(this);
+
         int Height = 800;
         int Width = 600;
         Scene scene = new Scene(gamePane, Height,Width);

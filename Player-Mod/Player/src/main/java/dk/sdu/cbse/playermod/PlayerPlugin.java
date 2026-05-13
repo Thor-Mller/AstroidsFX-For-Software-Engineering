@@ -4,7 +4,9 @@ import dk.sdu.cbse.common.*;
 import dk.sdu.cbse.common.components.*;
 
 import javafx.scene.image.Image;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PlayerPlugin implements IGamePlugin{
     private IEntity player;
 

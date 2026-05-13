@@ -11,7 +11,9 @@ import dk.sdu.cbse.common.components.VelocityComponent;
 import dk.sdu.cbse.bulletComponent.BulletComponent;
 
 import javafx.scene.image.Image;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BulletPlugin implements IGamePlugin {
     @Override
     public void start(IWorld world) {
