@@ -6,42 +6,38 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.ServiceLoader;
 
-@Component("game")
 public class Game extends Application {
     private final Pane gamePane = new Pane();
     private final World world = World.getInstance();
 
-    private final List<BaseLogicSystem> logicSystems = new ArrayList<>();
-    private final List<BaseIOSystem> renderSystems = new ArrayList<>();
+    private final List<BaseLogicSystem> logicSystems;
+    private final List<BaseIOSystem> renderSystems;
+    private final List<IGamePlugin> gamePlugins;
 
     private long endTime;
 
-    private void systemInitializer(GameData gameData){
-        ServiceLoader<IEntitySystem> loader = ServiceLoader.load(IEntitySystem.class);
-        for (IEntitySystem system : loader){
-            if (system.getPriority() == Priority.Logic)
-                logicSystems.add((BaseLogicSystem) system);
-            else if (system.getPriority() == Priority.Render){
-                BaseIOSystem rendersystem = (BaseIOSystem) system;
-                rendersystem.initialize(gameData);
-                renderSystems.add(rendersystem);
-            }
-            // System.out.println("loaded 1 " + system.getClass().getName());
-        }
+    Game(List<BaseLogicSystem> logicSystems, List<BaseIOSystem> renderSystems, List<IGamePlugin> gamePlugins){
+        this.logicSystems = logicSystems;
+        this.renderSystems = renderSystems;
+        this.gamePlugins = gamePlugins;
     }
 
-    @Autowired
-    private List<IGamePlugin> gamePlugins;
+//    private void systemInitializer(GameData gameData){
+//        ServiceLoader<IEntitySystem> loader = ServiceLoader.load(IEntitySystem.class);
+//        for (IEntitySystem system : loader){
+//            if (system.getPriority() == Priority.Logic)
+//                logicSystems.add((BaseLogicSystem) system);
+//            else if (system.getPriority() == Priority.Render){
+//                BaseIOSystem rendersystem = (BaseIOSystem) system;
+//                rendersystem.initialize(gameData);
+//                renderSystems.add(rendersystem);
+//            }
+//            // System.out.println("loaded 1 " + system.getClass().getName());
+//        }
+//    }
+
 
 //    private void modLoader(){
 //        ServiceLoader<IGamePlugin> loader = ServiceLoader.load(IGamePlugin.class);
@@ -53,23 +49,19 @@ public class Game extends Application {
 
     @Override
     public void start(Stage primaryStage){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.register(GameConfig.class);
-        context.refresh();
-
-        context.getAutowireCapableBeanFactory().autowireBean(this);
-
         int Height = 800;
         int Width = 600;
         Scene scene = new Scene(gamePane, Height,Width);
         GameData gameData = new GameData(Width, Height, scene, gamePane);
         primaryStage.setScene(scene);
         primaryStage.setTitle("AstroidsFX");
-        systemInitializer(gameData);
+        // systemInitializer(gameData);
         // modLoader();
-        gamePlugins.forEach(p -> p.start(world));
-        primaryStage.show();
+        renderSystems.forEach(r -> r.initialize(gameData));
 
+        gamePlugins.forEach(p -> p.start(world));
+
+        primaryStage.show();
         startGameLoop();
     }
 
@@ -101,4 +93,8 @@ public class Game extends Application {
             system.process(world, dt);
         }
     }
+
+//    public List<IEntitySystem> getLogicSystems(){
+//        return logicSystems;
+//    }
 }
