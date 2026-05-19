@@ -14,6 +14,7 @@ public class GameConfig {
     public GameConfig(){
     }
 
+    @Bean
     public Game game(){
         return new Game(logicSystems(),renderSystems(),gamePlugins());
     }

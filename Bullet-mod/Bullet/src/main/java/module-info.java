@@ -7,9 +7,6 @@ module dk.sdu.cbse.bullet {
     requires javafx.graphics;
     requires dk.sdu.cbse.bulletcomponent;
     requires ColliderComponent;
-    requires spring.core;
-    requires spring.context;
-    requires spring.beans;
 
     exports dk.sdu.cbse.bullet to dk.sdu.cbse.game;
     opens assest.bullet;

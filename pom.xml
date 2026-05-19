@@ -93,7 +93,7 @@
                     <arguments>
                         <argument>--module-path=mods-mvn;libs</argument>
                         <argument>--class-path=libs/*</argument>
-                        <argument>--module=dk.sdu.cbse.game/dk.sdu.cbse.game.Game</argument>
+                        <argument>--module=dk.sdu.cbse.game/dk.sdu.cbse.game.Main</argument>
                         <argument>--add-modules=javafx.graphics</argument>
                         <argument>--enable-native-access=javafx.graphics</argument>
                     </arguments>
