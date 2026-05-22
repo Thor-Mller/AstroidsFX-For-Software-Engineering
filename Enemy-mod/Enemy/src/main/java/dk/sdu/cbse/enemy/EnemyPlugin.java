@@ -1,4 +1,4 @@
-package dk.sdu.cbse.astroid;
+package dk.sdu.cbse.enemy;
 
 import dk.sdu.cbse.colliderComponent.ColliderComponent;
 import dk.sdu.cbse.common.IEntity;
@@ -9,38 +9,38 @@ import dk.sdu.cbse.common.components.PositionComponent;
 import dk.sdu.cbse.common.components.SpriteComponent;
 import dk.sdu.cbse.common.components.VelocityComponent;
 import javafx.scene.image.Image;
-import dk.sdu.cbse.astroidComponent.AstroidComponent;
+import dk.sdu.cbse.enemyComponent.EnemyComponent;
 
 import java.util.Random;
 
-public class AstroidPlugin implements IGamePlugin{
+public class EnemyPlugin implements IGamePlugin{
     @Override
     public void start(IWorld world) {
     }
 
-    public void spawnAstroid(IWorld world){
-        IEntity astroid = createAstroid();
+    public void spawnEnemy(IWorld world){
+        IEntity enemy = createEnemy();
 
         VelocityComponent vel = new VelocityComponent(1,100,1);
         vel.setDy(2.5);
-        astroid.addComponent(vel);
+        enemy.addComponent(vel);
 
-        astroid.addComponent(new AstroidComponent());
+        enemy.addComponent(new EnemyComponent());
 
-        astroid.addComponent(new AngleComponent(0));
+        enemy.addComponent(new AngleComponent(0));
 
-        astroid.addComponent(new ColliderComponent(32));
+        enemy.addComponent(new ColliderComponent(32));
 
-        astroid.addComponent(new PositionComponent(getRandomSpawnPosition(),0));
+        enemy.addComponent(new PositionComponent(getRandomSpawnPosition(),0));
 
-        Image img = new Image(getClass().getResourceAsStream("/assets.astroid/astroids.png"));
-        astroid.addComponent(new SpriteComponent(img));
+        Image img = new Image(getClass().getResourceAsStream("/assets.enemy/enemy.png"));
+        enemy.addComponent(new SpriteComponent(img));
 
-        world.addEntity(astroid);
+        world.addEntity(enemy);
     }
 
-    public IEntity createAstroid(){
-        return new Astroid();
+    public IEntity createEnemy(){
+        return new Enemy();
     }
 
     public int getRandomSpawnPosition(){

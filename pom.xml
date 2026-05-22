@@ -17,6 +17,8 @@
         <module>Player-Mod/Player-Movement</module>
         <module>Bullet-mod/Bullet</module>
         <module>Bullet-mod/BulletComponent</module>
+        <module>Enemy-mod/Enemy</module>
+        <module>Enemy-mod/EnemyComponent</module>
         <module>Astroid-mod/Astroid</module>
         <module>Astroid-mod/AstroidComponent</module>
         <module>Collision-mod/ColliderComponent</module>
