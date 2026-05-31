@@ -9,24 +9,35 @@
     <file url="file://$PROJECT_DIR$/Bullet-mod/Bullet/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/BulletComponent/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/BulletComponent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ColliderTest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ColliderTest/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Collision-mod/Collider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Collision-mod/Collider/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Collision-mod/ColliderComponent/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Collision-mod/ColliderComponent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Common/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Core/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Core/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Enemy-Mod/Enemy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Enemy-Mod/Enemy/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Enemy-Mod/EnemyComponent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Enemy-Mod/EnemyComponent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Game/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Game/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Player-Mod/Player-Movement/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Player-Mod/Player-Movement/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Player-Mod/Player/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Player-Mod/Player/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Player-Movement/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Player-Movement/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/PlayerComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/PlayerComponents/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/PlayerDeathSystem/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/PlayerDeathSystem/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/PlayerMovement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Player-Mod/PlayerMovement/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Score-mod/Score/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Score-mod/Score/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Score-mod/ScoreComponent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Score-mod/ScoreComponent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ScoreService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../../../../../../Windows/System32/src/main/java" charset="UTF-8" />

@@ -33,7 +33,7 @@ public class AstroidPlugin implements IGamePlugin{
 
         astroid.addComponent(new PositionComponent(getRandomSpawnPosition(),0));
 
-        Image img = new Image(getClass().getResourceAsStream("/assets.astroid/astroids.png"));
+        Image img = new Image(getClass().getResourceAsStream("/assets.astroid/asteroid.png"));
         astroid.addComponent(new SpriteComponent(img));
 
         world.addEntity(astroid);

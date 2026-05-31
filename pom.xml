@@ -14,31 +14,29 @@
         <module>Core</module>
         <module>Game</module>
         <module>Player-Mod/Player</module>
-        <module>Player-Mod/Player-Movement</module>
+        <module>Player-Mod/PlayerMovement</module>
         <module>Bullet-mod/Bullet</module>
         <module>Bullet-mod/BulletComponent</module>
-        <module>Enemy-mod/Enemy</module>
-        <module>Enemy-mod/EnemyComponent</module>
         <module>Astroid-mod/Astroid</module>
         <module>Astroid-mod/AstroidComponent</module>
         <module>Collision-mod/ColliderComponent</module>
         <module>Collision-mod/Collider</module>
-
+        <module>Enemy-Mod/Enemy</module>
+        <module>Enemy-Mod/EnemyComponent</module>
+        <module>Player-Mod/PlayerComponents</module>
+        <module>Player-Mod/PlayerDeathSystem</module>
+        <module>Score-mod/Score</module>
+        <module>Score-mod/ScoreComponent</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>21</maven.compiler.release>
-        <junit.version>5.12.1</junit.version>
+        <maven.compiler.release>25</maven.compiler.release>
+        <junit.version>5.11.4</junit.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>${junit.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
@@ -59,7 +57,28 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>7.0.5</version>
+                <version>7.0.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>5.15.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>5.15.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>7.0.7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -75,7 +94,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <release>21</release>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
             <plugin>

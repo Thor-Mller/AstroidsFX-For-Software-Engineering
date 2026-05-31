@@ -6,8 +6,6 @@ import dk.sdu.cbse.common.IWorld;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 public class World implements IWorld {
     private static final World _instance = new World();
@@ -55,5 +53,16 @@ public class World implements IWorld {
             result.retainAll(activeComponentMap.getOrDefault(aClass, new HashSet<>()));
         }
         return result;
+    }
+
+    public void updateEntity(IEntity e){
+        for (HashSet<IEntity> entities : activeComponentMap.values()){
+            entities.remove(e);
+        }
+
+        for (IComponent component : e.getComponents()){
+            Class<? extends IComponent> type = component.getClass();
+            activeComponentMap.computeIfAbsent(type, k -> new HashSet<>()).add(e);
+        }
     }
 }

@@ -6,4 +6,5 @@ public interface IWorld {
     void addEntity(IEntity entity);
     void removeEntity(IEntity entity);
     HashSet<IEntity> getEntitiesWithComponent(Class<? extends IComponent>... componentClass);
+    void updateEntity(IEntity entity);
 }
