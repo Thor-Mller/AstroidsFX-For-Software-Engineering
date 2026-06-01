@@ -3,37 +3,32 @@ package dk.sdu.cbse.bullet;
 import dk.sdu.cbse.common.BaseLogicSystem;
 import dk.sdu.cbse.common.IEntity;
 import dk.sdu.cbse.common.IWorld;
-import dk.sdu.cbse.common.components.InputComponent;
-import dk.sdu.cbse.playerComponents.PlayerComponent;
 import dk.sdu.cbse.common.components.PositionComponent;
+import dk.sdu.cbse.enemyComponent.EnemyComponent;
 
-public class PlayerShootingSystem extends BaseLogicSystem {
+public class EnemyShootingSystem extends BaseLogicSystem {
 
     private float cooldown = 0;
-    private final float firerate = 0.7f;
+    private final float firerate = 1.5f;
 
-    PlayerBulletPlugin bullet = new PlayerBulletPlugin();
+    EnemyBulletPlugin bullet = new EnemyBulletPlugin();
 
     @Override
     public void process(IWorld world, double deltaTime){
-        for (IEntity entity : world.getEntitiesWithComponent(PlayerComponent.class, PositionComponent.class, InputComponent.class)){
+        for (IEntity entity : world.getEntitiesWithComponent(EnemyComponent.class, PositionComponent.class)){
 
             PositionComponent pos = (PositionComponent) entity.getComponent(PositionComponent.class);
-            InputComponent inp = (InputComponent) entity.getComponent(InputComponent.class);
 
             updateShootingCooldown(deltaTime);
 
             //System.out.println("found player");
 
-            if (inp != null){
-                if (inp.SHOOT && canShoot()){
-
-                    bullet.shoot(world, pos, 24, -10, 0);
-                    resetCooldown();
-                    //System.out.println("you just shot");
-                }
-
+            if (canShoot()){
+                bullet.shoot(world, pos, 15, 30, 0);
+                resetCooldown();
             }
+
+
         }
     }
 

@@ -8,11 +8,10 @@ import dk.sdu.cbse.common.components.AngleComponent;
 import dk.sdu.cbse.common.components.PositionComponent;
 import dk.sdu.cbse.common.components.SpriteComponent;
 import dk.sdu.cbse.common.components.VelocityComponent;
-import dk.sdu.cbse.bulletComponent.BulletComponent;
-
+import dk.sdu.cbse.enemyBulletComponent.EnemyBulletComponent;
 import javafx.scene.image.Image;
 
-public class BulletPlugin implements IGamePlugin {
+public class EnemyBulletPlugin implements IGamePlugin {
     @Override
     public void start(IWorld world) {
 
@@ -26,10 +25,10 @@ public class BulletPlugin implements IGamePlugin {
         IEntity bullet = createBullet(world);
 
         VelocityComponent vel = new VelocityComponent(1,1000,1);
-        vel.setDy(-10);
+        vel.setDy(10);
         bullet.addComponent(vel);
 
-        bullet.addComponent(new BulletComponent());
+        bullet.addComponent(new EnemyBulletComponent());
 
         bullet.addComponent(new ColliderComponent(5));
 

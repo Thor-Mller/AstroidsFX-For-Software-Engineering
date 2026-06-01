@@ -7,8 +7,10 @@
     <file url="file://$PROJECT_DIR$/Astroid-mod/AstroidComponent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/Bullet/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Bullet-mod/Bullet/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Bullet-mod/BulletComponent/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Bullet-mod/BulletComponent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Bullet-mod/EnemyBulletComponent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Bullet-mod/EnemyBulletComponent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Bullet-mod/PlayerBulletComponent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Bullet-mod/PlayerBulletComponent/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ColliderTest/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ColliderTest/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Collision-mod/Collider/src/main/java" charset="UTF-8" />

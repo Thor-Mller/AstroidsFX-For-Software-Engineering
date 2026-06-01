@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>BulletComponent</artifactId>
+    <artifactId>EnemyBulletComponent</artifactId>
 
     <dependencies>
         <dependency>
@@ -18,5 +18,11 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>

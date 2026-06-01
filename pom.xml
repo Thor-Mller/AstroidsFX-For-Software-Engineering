@@ -16,7 +16,7 @@
         <module>Player-Mod/Player</module>
         <module>Player-Mod/PlayerMovement</module>
         <module>Bullet-mod/Bullet</module>
-        <module>Bullet-mod/BulletComponent</module>
+        <module>Bullet-mod/PlayerBulletComponent</module>
         <module>Astroid-mod/Astroid</module>
         <module>Astroid-mod/AstroidComponent</module>
         <module>Collision-mod/ColliderComponent</module>
@@ -27,6 +27,7 @@
         <module>Player-Mod/PlayerDeathSystem</module>
         <module>Score-mod/Score</module>
         <module>Score-mod/ScoreComponent</module>
+        <module>Bullet-mod/EnemyBulletComponent</module>
     </modules>
 
     <properties>

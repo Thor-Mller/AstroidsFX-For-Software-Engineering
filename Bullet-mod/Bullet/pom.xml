@@ -34,12 +34,22 @@
         </dependency>
         <dependency>
             <groupId>dk.sdu.cbse</groupId>
-            <artifactId>BulletComponent</artifactId>
+            <artifactId>PlayerBulletComponent</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>dk.sdu.cbse</groupId>
             <artifactId>ColliderComponent</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.cbse</groupId>
+            <artifactId>EnemyComponent</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>dk.sdu.cbse</groupId>
+            <artifactId>EnemyBulletComponent</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

@@ -3,7 +3,7 @@ package dk.sdu.cbse.collider;
 import dk.sdu.cbse.astroidComponent.AstroidComponent;
 import dk.sdu.cbse.astroidComponent.AstroidIsHitComponent;
 import dk.sdu.cbse.astroidComponent.SmallAstroidComponent;
-import dk.sdu.cbse.bulletComponent.BulletComponent;
+import dk.sdu.cbse.playerBulletComponent.PlayerBulletComponent;
 import dk.sdu.cbse.common.BaseLogicSystem;
 import dk.sdu.cbse.common.IEntity;
 import dk.sdu.cbse.common.IWorld;
@@ -48,9 +48,7 @@ public class ColliderSystem extends BaseLogicSystem {
         double distanceY = y1 - y2;
         double distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-        if (distance < col1.getRadius() + col2.getRadius()){
-            return true;
-        } else return false;
+        return distance < col1.getRadius() + col2.getRadius();
     }
 
     public void handleCollision(IWorld world, IEntity e1, IEntity e2){
@@ -100,7 +98,7 @@ public class ColliderSystem extends BaseLogicSystem {
         } catch (Exception e){}
     }
 
-    private boolean isBullet(IEntity e){ return e.getComponent(BulletComponent.class) != null;}
+    private boolean isBullet(IEntity e){ return e.getComponent(PlayerBulletComponent.class) != null;}
     private boolean isAstroid(IEntity e){ return e.getComponent(AstroidComponent.class) != null;}
     private boolean isPlayer(IEntity e){ return e.getComponent(PlayerComponent.class) != null;}
     private boolean isSmallAstroid(IEntity e){ return e.getComponent(SmallAstroidComponent.class) != null;}
